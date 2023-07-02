@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Declaração de Amor</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #ff00ff, #0000ff);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 20px;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      color: #0000ff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #cccccc;
+    }
+
+    #no-button {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h2>Sabia que te amo?</h2>
+  <a href="https://www.youtube.com/watch?v=IuBQkdsajVE" class="button">Sim</a>
+  <a href="#" class="button" id="no-button">Não</a>
+
+  <script>
+    var noButton = document.getElementById('no-button');
+    noButton.addEventListener('mouseover', function() {
+      var randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+      var randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+      noButton.style.left = randomX + 'px';
+      noButton.style.top = randomY + 'px';
+    });
+    noButton.addEventListener('click', function(event) {
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>
